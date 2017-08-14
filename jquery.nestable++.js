@@ -66,6 +66,7 @@ var menuEditor = $("#menu-editor");
 var editButton = $("#editButton");
 var editInputName = $("#editInputName");
 var editInputSlug = $("#editInputSlug");
+var editNextType = $("#editNextType");
 var currentEditName = $("#currentEditName");
 
 // Prepares and shows the Edit Form
@@ -75,7 +76,8 @@ var prepareEdit = function () {
 
   editInputName.val(target.data("label"));
   editInputSlug.val(target.data("to_web"));
-  currentEditName.html(target.data("name"));
+  editNextType.val(target.data("next_type"));
+  currentEditName.html(target.data("label"));
   editButton.data("owner-id", target.data("id"));
 
   console.log("[INFO] Editing Menu Item " + editButton.data("owner-id"));
@@ -90,9 +92,11 @@ var editMenuItem = function () {
 
   var newName = editInputName.val();
   var newSlug = editInputSlug.val();
+  var newNextType = editNextType.val();
 
   target.data("label", newName);
   target.data("to_web", newSlug);
+  target.data("next_type",newNextType);
 
   target.find("> .dd-handle").html(newName);
 
@@ -112,6 +116,7 @@ var newIdCount = 1;
 var addToMenu = function () {
   var newName = $("#addInputName").val();
   var newSlug = $("#addInputSlug").val();
+  var newNextType = $("#addNextType").val();
   //var newId = 'new-' + newIdCount;
   var newId = newIdCount;
   if ($("li").last().attr("data-id")==undefined)
@@ -125,6 +130,7 @@ var addToMenu = function () {
     'data-label="' + newName + '" ' +
     //'data-name="' + newName + '" ' +
     'data-to_web="' + newSlug + '" ' +
+    'data-next_type="' + newNextType + '" ' +
     //'data-new="1" ' +
     'data-deleted="0" '+
     '>' +

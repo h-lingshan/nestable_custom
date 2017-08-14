@@ -307,6 +307,7 @@
                  id = $(item).attr("data-id"), 
                  label = $(item).attr("data-label"),
                  to_web = $(item).attr("data-to_web"),
+                 next_type = $(item).attr("data-next_type"),
                  deleted = $(item).attr("data-deleted"),
                  pid = $(item).parent(o.listNodeName + "." + o.listClass).parent(o.itemNodeName + "." + o.itemClass).attr("data-id") || null, id && 
                  ret.push({
@@ -314,6 +315,7 @@
                  parent_id: pid,
                  label: label,
                  to_web: to_web,
+                 next_type: next_type,
                  deleted: deleted,
                  depth: depth,
                  lft: lft,
