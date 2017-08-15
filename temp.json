@@ -1,1 +1,13 @@
-[{"deleted":0,"to_web":null,"label":"見たいものが決まっている？","id":1,"children":[{"deleted":0,"to_web":null,"label":"YES","id":2},{"deleted":0,"to_web":null,"label":"NO","id":3,"children":[{"deleted":0,"to_web":null,"label":"誰と見る？","id":4,"children":[{"deleted":0,"to_web":null,"label":"1人","id":5,"children":[{"deleted":0,"to_web":null,"label":"どれが好き","id":6,"children":[{"deleted":0,"to_web":null,"label":"君の名は","id":7,"children":[{"deleted":0,"to_web":null,"label":"どれが好き(2)","id":8,"children":[{"deleted":0,"to_web":null,"label":"ラストサムライ","id":9,"children":[{"deleted":0,"to_web":null,"label":"どれが好き(3)","id":10,"children":[{"deleted":0,"to_web":"これです","label":"猟奇的な彼女","id":11},{"deleted":0,"to_web":"これです","label":"千と千尋","id":12},{"deleted":0,"to_web":"これです","label":"アイ・アム・サム","id":13}]}]}]}]}]}]}]}]}]}]
+[
+   {
+      "id":"1",
+      "parent_id":null,
+      "label":"見たいものがお決まり？",
+      "to_web":"null",
+      "next_type":"message",
+      "deleted":"0",
+      "depth":0,
+      "lft":1,
+      "rgt":2
+   }
+]

@@ -87,8 +87,10 @@
         // build HTML from serialized JSON if passed
         if (this.options.json !== undefined) {
             this._build();
-        }
+        }else
+        {
         this.init();
+        }
     }
 
     Plugin.prototype = {
@@ -102,7 +104,7 @@
             list.el.data('nestable-group', this.options.group);
 
             list.placeEl = $('<div class="' + list.options.placeClass + '"/>');
-
+        
             $.each(this.el.find(list.options.itemNodeName), function(k, el) {
                 list.setParent($(el));
             });
@@ -183,6 +185,7 @@
             build_res = build_res.replace(/<ol class="dd-list">/, "","g")
             build_res = build_res.replace(/<\/ol>$/, "");
             $(this.el).html(build_res);
+            //$(this.el).html(this._buildList(json, this.options))
         },
         _buildList: function(items, options) {
             if (!items) {
@@ -445,6 +448,7 @@
             this.dragRootEl = this.el;
 
             this.dragEl = $(document.createElement(this.options.listNodeName)).addClass(this.options.listClass + ' ' + this.options.dragClass);
+           
             this.dragEl.css('width', dragItem.width());
 
             dragItem.after(this.placeEl);
@@ -554,7 +558,6 @@
                             list = $('<' + opt.listNodeName + '/>').addClass(opt.listClass);
                             list.append(this.placeEl);
                             prev.append(list);
-                            console.log(list);
                             this.setParent(prev);
                         } else {
                             // else append to next level up
