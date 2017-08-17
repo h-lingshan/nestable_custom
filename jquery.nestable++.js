@@ -7,7 +7,7 @@ var updateOutput = function (e) {
       output = list.data('output');
   if (window.JSON) {
     if (output) {
-      output.val(window.JSON.stringify(list.nestable('asNestedSet')));
+      output.val(window.JSON.stringify(list.nestable('serialize')));
     }
   } else {
     alert('JSON browser support required for this page.');
@@ -132,13 +132,13 @@ var addToMenu = function () {
     'data-to_web="' + newSlug + '" ' +
     'data-next_type="' + newNextType + '" ' +
     //'data-new="1" ' +
-    'data-deleted="0" '+
+    //'data-deleted="0" '+
     '>' +
     '<div class="dd-handle">' + newName + '</div> ' +
-    '<span class="button-delete btn btn-default btn-xs pull-right" ' +
-    'data-owner-id="' + newId + '"> ' +
-    '<i class="fa fa-times-circle-o" aria-hidden="true"></i> ' +
-    '</span>' +
+    //'<span class="button-delete btn btn-default btn-xs pull-right" ' +
+    //'data-owner-id="' + newId + '"> ' +
+    //'<i class="fa fa-times-circle-o" aria-hidden="true"></i> ' +
+    //'</span>' +
     '<span class="button-edit btn btn-default btn-xs pull-right" ' +
     'data-owner-id="' + newId + '">' +
     '<i class="fa fa-pencil" aria-hidden="true"></i>' +
@@ -152,7 +152,7 @@ var addToMenu = function () {
   updateOutput($('#nestable').data('output', $('#json-output')));
 
   // set events
-  $("#nestable .button-delete").on("click", deleteFromMenu);
+  //$("#nestable .button-delete").on("click", deleteFromMenu);
   $("#nestable .button-edit").on("click", prepareEdit);
 };
 
@@ -174,7 +174,7 @@ var loadFromJson = function(){
       // update JSON      
       updateOutput($('#nestable').data('output', $('#json-output')));
       // set events
-     $("#nestable .button-delete").on("click", deleteFromMenu);
+     //$("#nestable .button-delete").on("click", deleteFromMenu);
      $("#nestable .button-edit").on("click", prepareEdit);
      }     
   });
@@ -195,7 +195,7 @@ $(function () {
   // set onclick events
   editButton.on("click", editMenuItem);
 
-  $("#nestable .button-delete").on("click", deleteFromMenu);
+  //$("#nestable .button-delete").on("click", deleteFromMenu);
 
   $("#nestable .button-edit").on("click", prepareEdit);
 

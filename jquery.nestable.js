@@ -59,15 +59,15 @@
             　　 var newId = $.map(item_attrs, function(value, key) {
                    if (key == "data-id") return value
                 })
-                var html = '<' + options.itemNodeName + item_attrs_string + 'data-deleted="0" data-parent_id="' +"0" + '">';
+                var html = '<' + options.itemNodeName + item_attrs_string + 'data-parent_id="' +"0" + '">';
                 html += '<' + options.handleNodeName + ' class="' + options.handleClass + '">';
                 html += item["label"];
                 html += '</' + options.handleNodeName + '>';
                 html += children;
-                html += '<span class="button-delete btn btn-default btn-xs pull-right" ' ;
-                html += 'data-owner-id="' + newId + '"> ' ;
-                html += '<i class="fa fa-times-circle-o" aria-hidden="true"></i> ' ;
-                html += '</span>' ;
+               // html += '<span class="button-delete btn btn-default btn-xs pull-right" ' ;
+               // html += 'data-owner-id="' + newId + '"> ' ;
+               // html += '<i class="fa fa-times-circle-o" aria-hidden="true"></i> ' ;
+               // html += '</span>' ;
                 html += '<span class="button-edit btn btn-default btn-xs pull-right" ' ;
                 html += 'data-owner-id="' + newId + '">' ;
                 html += '<i class="fa fa-pencil" aria-hidden="true"></i>' ;
@@ -284,15 +284,18 @@
                     items.each(function()
                     {
                         var li   = $(this),
-                            item = $.extend({}, li.data()),
+                            parent_id = {parent_id: li.parent(list.options.listNodeName + "." + list.options.listClass).parent(list.options.itemNodeName + "." +  list.options.itemClass).attr("data-id") || null},
+                            item = $.extend({}, li.data(),parent_id),
                             sub  = li.children(list.options.listNodeName);
                         if (sub.length) {
                             item.children = step(sub, depth + 1);
                         }
                         array.push(item);
+                       
                     });
                     return array;
                 };
+             
             data = step(list.el.find(list.options.listNodeName).first(), depth);
             return data;
         },

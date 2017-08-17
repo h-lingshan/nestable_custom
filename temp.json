@@ -1,13 +1,1 @@
-[
-   {
-      "id":"1",
-      "parent_id":null,
-      "label":"見たいものがお決まり？",
-      "to_web":"null",
-      "next_type":"message",
-      "deleted":"0",
-      "depth":0,
-      "lft":1,
-      "rgt":2
-   }
-]
+[{"id":"1","parent_id":null,"label":"見たいものがお決まり？","to_web":"null","next_type":"null","depth":0,"lft":1,"rgt":16},{"id":"2","parent_id":"1","label":"YES","to_web":"null","next_type":"null","depth":1,"lft":2,"rgt":3},{"id":"3","parent_id":"1","label":"NO","to_web":"null","next_type":"null","depth":1,"lft":4,"rgt":15},{"id":"4","parent_id":"3","label":"誰と見る？","to_web":"null","next_type":"null","depth":2,"lft":5,"rgt":14},{"id":"5","parent_id":"4","label":"1人","to_web":"null","next_type":"null","depth":3,"lft":6,"rgt":7},{"id":"6","parent_id":"4","label":"子供","to_web":"null","next_type":"null","depth":3,"lft":8,"rgt":11},{"id":"8","parent_id":"6","label":"どれが好き","to_web":"null","next_type":"null","depth":4,"lft":9,"rgt":10},{"id":"7","parent_id":"4","label":"恋人・友人","to_web":"null","next_type":"null","depth":3,"lft":12,"rgt":13}]
