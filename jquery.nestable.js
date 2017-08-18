@@ -43,7 +43,7 @@
             expandBtnHTML   : '<button data-action="expand" type="button">Expand</button>',
             collapseBtnHTML : '<button data-action="collapse" type="button">Collapse</button>',
             group           : 0,
-            maxDepth        : 5,
+            maxDepth        : 30,
             threshold       : 20,
             listRenderer: function(children, options) {
                 var html = '<' + options.listNodeName + ' class="' + options.listClass + '">';

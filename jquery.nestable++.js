@@ -120,10 +120,14 @@ var addToMenu = function () {
   //var newId = 'new-' + newIdCount;
   var newId = newIdCount;
   if ($("li").last().attr("data-id")==undefined)
+  {
+    console.log(newId)
     newId = 1;
-  else
+  }else
+  {
     newId = parseInt($("li").last().attr("data-id"))+1
-  
+    console.log(newId)
+  }
   nestableList.append(
     '<li class="dd-item" ' +
     'data-id="' + newId + '" ' +
