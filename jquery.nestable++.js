@@ -125,8 +125,14 @@ var addToMenu = function () {
     newId = 1;
   }else
   {
-    newId = parseInt($("li").last().attr("data-id"))+1
-    console.log(newId)
+    var array = [];
+    var find = document.querySelectorAll('[data-id]')
+    _find = Array.prototype.slice.call(find,0)
+    $.each(_find, function(t,v){
+      array.push(parseInt($(v).attr('data-id')))
+    })
+    array = array.sort(function(a, b){return $(a).text() > $(b).text() ? 1 : -1;});
+    newId = array.slice(-1).pop()+1
   }
   nestableList.append(
     '<li class="dd-item" ' +
